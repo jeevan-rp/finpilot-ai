@@ -22,8 +22,8 @@ export default function Sidebar({ isOpen, setIsOpen }) {
     >
       <div className="h-16 flex items-center justify-between px-4 border-b dark:border-gray-800 shrink-0">
         <div className="flex items-center gap-3 overflow-hidden whitespace-nowrap">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shrink-0">
-            <span className="text-white font-bold text-lg leading-none">F</span>
+          <div className="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center overflow-hidden">
+            <img src="/fintech.png" alt="FinPilot Logo" className="w-full h-full object-contain" />
           </div>
           <AnimatePresence>
             {isOpen && (

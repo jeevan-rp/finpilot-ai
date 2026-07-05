@@ -14,8 +14,8 @@ export default function LandingPage() {
       {/* Navbar */}
       <nav className="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg">
-            <span className="text-white font-bold text-xl">F</span>
+          <div className="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center overflow-hidden">
+            <img src="/fintech.png" alt="FinPilot Logo" className="w-full h-full object-contain" />
           </div>
           <span className="font-bold text-xl tracking-tight">FinPilot</span>
         </div>
@@ -75,24 +75,77 @@ export default function LandingPage() {
           <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl shadow-2xl overflow-hidden p-2">
             <div className="rounded-xl border border-gray-100 dark:border-gray-700 overflow-hidden bg-gray-50 dark:bg-gray-900 flex">
                {/* Mock Sidebar */}
-               <div className="w-48 hidden md:block border-r dark:border-gray-800 p-4 space-y-4">
-                 <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-24 mb-8"></div>
-                 <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded-lg w-full"></div>
-                 <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded-lg w-full opacity-50"></div>
-                 <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded-lg w-full opacity-50"></div>
+               <div className="w-48 hidden md:block border-r border-gray-100 dark:border-gray-800 p-4 space-y-4 bg-white dark:bg-gray-900">
+                 <div className="flex items-center gap-2 mb-8 px-2">
+                   <div className="w-6 h-6 rounded shrink-0 flex items-center justify-center overflow-hidden">
+                     <img src="/fintech.png" alt="Logo" className="w-full h-full object-contain" />
+                   </div>
+                   <span className="font-bold text-sm dark:text-white">FinPilot</span>
+                 </div>
+                 <div className="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-primary rounded-lg text-sm font-medium">
+                   <LineChart className="w-4 h-4" /> Dashboard
+                 </div>
+                 <div className="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg text-sm font-medium">
+                   <Bot className="w-4 h-4" /> AI Coach
+                 </div>
+                 <div className="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg text-sm font-medium">
+                   <ShieldCheck className="w-4 h-4" /> Security
+                 </div>
                </div>
+               
                {/* Mock Content */}
-               <div className="flex-1 p-6 space-y-6">
-                 <div className="flex justify-between">
-                    <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-48"></div>
-                    <div className="h-8 w-8 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+               <div className="flex-1 p-6 space-y-6 bg-gray-50/50 dark:bg-gray-900/50">
+                 {/* Header */}
+                 <div className="flex justify-between items-center">
+                    <div>
+                      <h2 className="text-lg font-bold dark:text-white">Welcome back, Demo!</h2>
+                      <p className="text-xs text-gray-500">Here's your financial summary.</p>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-blue-600 border-2 border-white dark:border-gray-800 shadow-sm overflow-hidden">
+                      <img src="https://ui-avatars.com/api/?name=Demo&background=00ADEF&color=fff" alt="User" />
+                    </div>
                  </div>
+                 
+                 {/* KPI Cards */}
                  <div className="grid grid-cols-3 gap-4">
-                    <div className="h-24 bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
-                    <div className="h-24 bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
-                    <div className="h-24 bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                      <p className="text-xs text-gray-500 mb-1">Total Balance</p>
+                      <p className="text-lg font-bold dark:text-white">₹1,24,500</p>
+                      <span className="text-[10px] text-success font-medium flex items-center mt-1">↑ 12% vs last month</span>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                      <p className="text-xs text-gray-500 mb-1">Monthly Spend</p>
+                      <p className="text-lg font-bold dark:text-white">₹32,450</p>
+                      <span className="text-[10px] text-error font-medium flex items-center mt-1">↓ 5% vs last month</span>
+                    </div>
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-4 rounded-xl shadow-sm text-white relative overflow-hidden">
+                      <div className="relative z-10">
+                        <p className="text-xs text-gray-300 mb-1 flex items-center gap-1"><Bot className="w-3 h-3 text-primary" /> AI Insight</p>
+                        <p className="text-xs font-medium mt-2 leading-relaxed">You're on track to save ₹15k this month. Great job!</p>
+                      </div>
+                      <div className="absolute -right-4 -bottom-4 w-16 h-16 bg-primary/20 rounded-full blur-xl"></div>
+                    </div>
                  </div>
-                 <div className="h-48 bg-gray-200 dark:bg-gray-700 rounded-xl w-full"></div>
+                 
+                 {/* Chart Area */}
+                 <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 h-40 flex flex-col">
+                   <div className="flex justify-between items-center mb-4">
+                     <h3 className="text-sm font-bold dark:text-white">Spending Analytics</h3>
+                     <div className="flex gap-1">
+                       <div className="w-2 h-2 rounded-full bg-primary"></div>
+                       <div className="w-2 h-2 rounded-full bg-gray-200"></div>
+                       <div className="w-2 h-2 rounded-full bg-gray-200"></div>
+                     </div>
+                   </div>
+                   <div className="flex-1 flex items-end justify-between gap-2 px-2">
+                     <div className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-t-sm h-[40%]"></div>
+                     <div className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-t-sm h-[60%]"></div>
+                     <div className="w-full bg-primary rounded-t-sm h-[85%]"></div>
+                     <div className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-t-sm h-[50%]"></div>
+                     <div className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-t-sm h-[70%]"></div>
+                     <div className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-t-sm h-[30%]"></div>
+                   </div>
+                 </div>
                </div>
             </div>
           </div>
