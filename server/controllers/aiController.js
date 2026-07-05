@@ -22,13 +22,13 @@ exports.chatWithAgent = async (req, res) => {
 
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
     
-    const prompt = \`
+    const prompt = `
       You are FinPilot, an autonomous banking AI assistant for a premium fintech app.
-      The user says: "\${message}"
+      The user says: "${message}"
       
       Respond professionally but concisely (2-3 sentences max). 
       If the user asks to perform an action (e.g., invest, create FD, block card, pay bill), strongly recommend it and ask for confirmation.
-    \`;
+    `;
 
     const result = await model.generateContent(prompt);
     const text = result.response.text();
